@@ -1,10 +1,15 @@
+require 'timecop'
+
 class Bank
 
   MAXIMUM_BALANCE = 20000
 
-  attr_reader :balance
+  attr_reader :balance, :date, :history
+
   def initialize
     @balance = 0
+    @date = Date.today.strftime("%d/%m/%Y")
+    @history = []
   end
 
   def deposit(amount)
@@ -16,5 +21,7 @@ class Bank
     fail "Insufficient funds" if (@balance - amount) < 0
     @balance -= amount
   end
+
+
 end
 
