@@ -31,6 +31,11 @@ describe Bank do
     it 'should return an error if balance exceeds the maximum balance' do
       expect{ subject.deposit(20001) }.to raise_error "Maximum balance exceeded!"
     end
+
+    it 'should add the deposit details to the history' do
+      subject.deposit(10)
+      expect(subject.history).to include({:balance => subject.balance, :credit => 10, :date => subject.date, :debit => 0 })
+    end
   end
 
   describe '#withdraw' do
@@ -42,6 +47,12 @@ describe Bank do
 
     it 'should return an error if balance would drop below 0 when trying to withdraw' do
       expect{ subject.withdraw(10) }.to raise_error "Insufficient funds"
+    end
+
+    it 'should add the withdrawal details to the history' do
+      subject.deposit(20)
+      subject.withdraw(10)
+      expect(subject.history).to include({:balance => subject.balance, :credit => 0, :date => subject.date, :debit => 10 })
     end
   end
 
