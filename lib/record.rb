@@ -1,7 +1,12 @@
+require_relative 'bank'
+
 class Record
 
-  def log_date
-    Time.now
+  attr_reader :date, :credit, :debit, :balance
+  
+  def initialize
+  @date = Date.today
+  @credit = 0
+  @debit = 0
   end
-
 end

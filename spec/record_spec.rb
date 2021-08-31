@@ -1,23 +1,24 @@
+
+require 'bank'
 require 'record'
 require 'timecop'
 
-describe Record do
-  
+describe Record do  
+
   before :each do
     subject { described_class.new }
   end
 
   context 'when initialised' do
-    before do
-      Timecop.freeze(Time.now)
-    end
-
-    after do
-      Timecop.return
-    end
-
-   it 'return the date the record was made' do
-     expect(subject.log_date).to eq(Time.now)
+   it 'is created with a date' do
+     expect(subject.date).to eq(Date.today)
    end
+   it 'is created with a credit' do
+     expect(subject.credit).to eq(0)
+   end
+   it 'is created with a debit' do
+    expect(subject.debit).to eq(0)
+  end
+   
   end
 end

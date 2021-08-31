@@ -1,8 +1,11 @@
+require_relative 'record'
+
 class Bank
 
   MAXIMUM_BALANCE = 20000
 
   attr_reader :balance
+
   def initialize
     @balance = 0
   end
