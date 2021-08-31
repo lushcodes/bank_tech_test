@@ -4,7 +4,7 @@ class Bank
 
   MAXIMUM_BALANCE = 20000
 
-  attr_reader :balance, :date, :history
+  attr_reader :balance, :date, :history, :credit, :debit
 
   def initialize
     @balance = 0
@@ -25,7 +25,8 @@ class Bank
   end
 
   def print_statement
-
+    puts "date | credit | debit | balance"
+    @history.each { | record | puts "#{record[:date]} | #{record[:credit].to_s} | #{record[:debit].to_s} | #{record[:balance].to_s}" }
   end
 end
 

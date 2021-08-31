@@ -56,5 +56,12 @@ describe Bank do
     end
   end
 
+  describe '#print_statement' do
+    it 'should print the records in the account history' do
+      subject.deposit(50)
+      expect {subject.print_statement }.to output("date | credit | debit | balance\n#{subject.date} | 50 | 0 | 50\n").to_stdout
+    end
+  end
+
 
 end
