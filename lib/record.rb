@@ -1,12 +1,12 @@
-require_relative 'bank'
+# require_relative 'bank'
 
-class Record
+# class Record
 
-  attr_reader :date, :credit, :debit, :balance
+#   attr_reader :date, :credit, :debit, :balance
   
-  def initialize
-  @date = Date.today
-  @credit = 0
-  @debit = 0
-  end
-end
+#   def initialize
+#   @date = Date.today
+#   @credit = 0
+#   @debit = 0
+#   end
+# end

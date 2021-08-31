@@ -1,4 +1,5 @@
 require 'bank'
+require 'timecop'
 
 describe Bank do
 
@@ -11,6 +12,13 @@ describe Bank do
     it { is_expected.to respond_to(:withdraw).with(1).argument }
     it 'has an initial balance of 0' do
       expect(subject.balance).to eq(0)
+    end
+    it 'has todays date' do
+      expect(subject.date).to eq("31/08/2021")
+    end
+
+    it 'starts with an empty history' do
+      expect(subject.history).to eq([])
     end
   end
 
