@@ -6,12 +6,13 @@ class Bank
 
   end
 
-  def deposit(num)
+  def deposit(amount)
+    @balance += amount
 
   end
 
-  def withdraw(num)
-    
+  def withdraw(amount)
+    @balance -= amount
   end
 end
 
