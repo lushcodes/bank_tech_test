@@ -1,4 +1,6 @@
-class Bank 
+class Bank
+
+  MAXIMUM_BALANCE = 20000
 
   attr_reader :balance
   def initialize
@@ -7,6 +9,7 @@ class Bank
   end
 
   def deposit(amount)
+    fail "Maximum balance exceeded!" if (@balance + amount) > MAXIMUM_BALANCE
     @balance += amount
   end
 

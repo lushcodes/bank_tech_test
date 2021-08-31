@@ -19,6 +19,10 @@ describe Bank do
       subject.deposit(5)
       expect(subject.balance).to eq(5)
     end
+
+    it 'should return an error if balance exceeds the maximum balance' do
+      expect{ subject.deposit(20001) }.to raise_error "Maximum balance exceeded!"
+    end
   end
 
   describe '#withdraw' do
