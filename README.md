@@ -44,7 +44,7 @@ The project is linted and has 100% test coverage.
 
 ### Improvements
 
-As amazing and functional as the app is, ideally I would like to learn how to separate the functionality into 3 classes.
+As amazing and functional as the app is, ideally I would like to learn how to separate the functionality into 3 classes. This is to improve readability as well as adhere to the Single Responsibility Principle as currently all my functionality is based in one class. Separating this out will also make the code easier to change or add additional functionality if required.
 
 I have diagrammed my thought process below:
 
