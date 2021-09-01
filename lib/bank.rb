@@ -7,11 +7,11 @@ require_relative 'record'
 class Bank
   MAXIMUM_BALANCE = 20_000
 
-  attr_reader :balance, :date, :history, :credit, :debit
+  attr_reader :balance, :history
 
   def initialize
     @balance = 0.00
-    @date = Date.today.strftime('%d/%m/%Y') # date formatting
+    # @date = Date.today.strftime('%d/%m/%Y') # date formatting
     @history = []
   end
 
@@ -19,21 +19,20 @@ class Bank
     raise 'Maximum balance exceeded!' if (@balance + amount) > MAXIMUM_BALANCE
 
     @balance += amount
-    @history << Record.new
-    
+    @history << Record.new(balance: @balance, credit: amount, debit: 0)
   end
 
   def withdraw(amount)
     raise 'Insufficient funds' if (@balance - amount).negative?
 
     @balance -= amount
-    @history << { balance: format('%.2f', @balance), credit: format('%.2f', 0), date: @date, debit: '%.2f' % amount }
+    @history << Record.new(balance: @balance, credit: 0, debit: amount)
   end
 
   def print_statement
     puts 'date || credit || debit || balance'
     @history.each do |record|
-      puts "#{record[:date]} || #{record[:credit]} || #{record[:debit]} || #{record[:balance]}"
+      puts "#{record.date} || #{record.credit} || #{record.debit} || #{record.balance}"
     end
   end
 end
