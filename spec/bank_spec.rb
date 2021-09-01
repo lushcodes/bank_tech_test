@@ -14,7 +14,7 @@ describe Bank do
       expect(subject.balance).to eq(0)
     end
     it 'has todays date' do
-      expect(subject.date).to eq("31/08/2021")
+      expect(subject.date).to eq(Date.today.strftime('%d/%m/%Y'))
     end
 
     it 'starts with an empty history' do
@@ -59,7 +59,7 @@ describe Bank do
   describe '#print_statement' do
     it 'should print the records in the account history' do
       subject.deposit(50)
-      expect {subject.print_statement }.to output("date | credit | debit | balance\n#{subject.date} | 50 | 0 | 50\n").to_stdout
+      expect {subject.print_statement }.to output("date || credit || debit || balance\n#{subject.date} || 50 || 0 || 50\n").to_stdout
     end
   end
 

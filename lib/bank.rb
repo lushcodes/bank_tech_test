@@ -25,8 +25,8 @@ class Bank
   end
 
   def print_statement
-    puts "date | credit | debit | balance"
-    @history.each { | record | puts "#{record[:date]} | #{record[:credit].to_s} | #{record[:debit].to_s} | #{record[:balance].to_s}" }
+    puts "date || credit || debit || balance"
+    @history.each { | record | puts "#{record[:date]} || #{record[:credit].to_s} || #{record[:debit].to_s} || #{record[:balance].to_s}" }
   end
 end
 
