@@ -1,9 +1,9 @@
-
+# frozen_string_literal: true
 # require 'bank'
 # require 'record'
 # require 'timecop'
 
-# describe Record do  
+# describe Record do
 
 #   before :each do
 #     subject { described_class.new }
@@ -19,6 +19,6 @@
 #    it 'is created with a debit' do
 #     expect(subject.debit).to eq(0)
 #   end
-   
+
 #   end
 # end
