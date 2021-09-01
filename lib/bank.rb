@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'timecop'
-require_relative 'record'
 
 # BANK CLASS
 class Bank

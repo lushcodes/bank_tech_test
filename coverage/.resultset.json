@@ -7,7 +7,6 @@
           null,
           1,
           1,
-          1,
           null,
           1,
           1,
@@ -82,7 +81,6 @@
           null,
           null,
           1,
-          1,
           null,
           null,
           1,
@@ -118,53 +116,8 @@
           null,
           null
         ]
-      },
-      "/Users/lukeusher/Documents/MAKERS/bank_tech_test/lib/record.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/lukeusher/Documents/MAKERS/bank_tech_test/spec/record_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1630494471
+    "timestamp": 1630508531
   }
 }

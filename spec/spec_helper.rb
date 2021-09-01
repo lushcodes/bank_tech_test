@@ -18,7 +18,7 @@ SimpleCov.start
 
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
-  SimpleCov.start 'rails'
+  SimpleCov.start
   puts 'required simplecov'
 end
 #

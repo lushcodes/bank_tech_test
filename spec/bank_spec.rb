@@ -2,7 +2,6 @@
 
 require 'bank'
 require 'timecop'
-require 'record'
 
 describe Bank do
   before :each do
