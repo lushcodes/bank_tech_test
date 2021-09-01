@@ -14,7 +14,7 @@ describe Bank do
     it { is_expected.to respond_to(:withdraw).with(1).argument }
 
     it 'has an initial balance of 0' do
-      expect(subject.balance).to eq(0)
+      expect(subject.balance).to eq(0.00)
     end
     it 'has todays date' do
       expect(subject.date).to eq(Date.today.strftime('%d/%m/%Y'))
@@ -28,17 +28,17 @@ describe Bank do
   describe '#deposit' do
     it 'should increase the balance by the amount given' do
       subject.deposit(5)
-      expect(subject.balance).to eq(5)
+      expect(subject.balance).to eq(5.00)
     end
 
     it 'should return an error if balance exceeds the maximum balance' do
-      expect { subject.deposit(20_001) }.to raise_error 'Maximum balance exceeded!'
+      expect { subject.deposit(20_001.00) }.to raise_error 'Maximum balance exceeded!'
     end
 
     it 'should add the deposit details to the history' do
       subject.deposit(10)
-      expect(subject.history).to include({ balance: subject.balance, credit: 10, date: subject.date,
-                                           debit: 0 })
+      expect(subject.history).to include({ balance: '%.2f' % subject.balance, credit: '10.00', date: subject.date,
+                                           debit: '0.00' })
     end
   end
 
@@ -46,7 +46,7 @@ describe Bank do
     it 'should decrease the balance by the amount given' do
       subject.deposit(5)
       subject.withdraw(5)
-      expect(subject.balance).to eq(0)
+      expect(subject.balance).to eq(0.00)
     end
 
     it 'should return an error if balance would drop below 0 when trying to withdraw' do
@@ -56,8 +56,8 @@ describe Bank do
     it 'should add the withdrawal details to the history' do
       subject.deposit(20)
       subject.withdraw(10)
-      expect(subject.history).to include({ balance: subject.balance, credit: 0, date: subject.date,
-                                           debit: 10 })
+      expect(subject.history).to include({ balance: '%.2f' % subject.balance, credit: '0.00', date: subject.date,
+                                           debit: '10.00' })
     end
   end
 
@@ -66,7 +66,7 @@ describe Bank do
       subject.deposit(50)
       expect do
         subject.print_statement
-      end.to output("date || credit || debit || balance\n#{subject.date} || 50 || 0 || 50\n").to_stdout
+      end.to output("date || credit || debit || balance\n#{subject.date} || 50.00 || 0.00 || 50.00\n").to_stdout
     end
   end
 end

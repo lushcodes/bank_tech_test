@@ -21,9 +21,9 @@ Example Input:
 Example Output:
 
 ```
-date        || credit || debit || balance
-01/09/2021  || 300     || 0    || 300
-01/09/2021  || 0       || 150  || 150 
+date        || credit || debit  || balance
+01/09/2021  || 300.00 || 0.00   || 300.00
+01/09/2021  || 0.00   || 150.00 || 150.00 
 
 ```
 
