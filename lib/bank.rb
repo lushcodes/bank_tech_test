@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'timecop'
+require_relative 'record'
 
 # BANK CLASS
 class Bank
@@ -18,7 +19,8 @@ class Bank
     raise 'Maximum balance exceeded!' if (@balance + amount) > MAXIMUM_BALANCE
 
     @balance += amount
-    @history << { balance: format('%.2f', @balance), credit: '%.2f' % amount, date: @date, debit: format('%.2f', 0) }
+    @history << Record.new
+    
   end
 
   def withdraw(amount)

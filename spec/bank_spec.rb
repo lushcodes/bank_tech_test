@@ -2,8 +2,10 @@
 
 require 'bank'
 require 'timecop'
+require 'record'
 
 describe Bank do
+
   before :each do
     subject { described_class.new }
   end
@@ -25,6 +27,7 @@ describe Bank do
   end
 
   describe '#deposit' do
+
     it 'should increase the balance by the amount given' do
       subject.deposit(5)
       expect(subject.balance).to eq(5.00)
@@ -34,10 +37,13 @@ describe Bank do
       expect { subject.deposit(20_001.00) }.to raise_error 'Maximum balance exceeded!'
     end
 
-    it 'should add the deposit details to the history' do
+    it 'creates a record class' do
+      record = double("record")
+      allow(Record).to receive(:new) { record }
+
       subject.deposit(10)
-      expect(subject.history).to include({ balance: '%.2f' % subject.balance, credit: '10.00', date: subject.date,
-                                           debit: '0.00' })
+      expect(subject.history).to include(record)
+
     end
   end
 
@@ -60,12 +66,12 @@ describe Bank do
     end
   end
 
-  describe '#print_statement' do
-    it 'should print the records in the account history' do
-      subject.deposit(50)
-      expect do
-        subject.print_statement
-      end.to output("date || credit || debit || balance\n#{subject.date} || 50.00 || 0.00 || 50.00\n").to_stdout
-    end
-  end
+  # describe '#print_statement' do
+  #   it 'should print the records in the account history' do
+  #     subject.deposit(50)
+  #     expect do
+  #       subject.print_statement
+  #     end.to output("date || credit || debit || balance\n#{subject.date} || 50.00 || 0.00 || 50.00\n").to_stdout
+  #   end
+  # end
 end
