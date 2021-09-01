@@ -12,12 +12,15 @@
           1,
           null,
           1,
-          11,
+          10,
           null,
           null,
           1,
-          2,
-          2,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -88,6 +91,8 @@
           null,
           1,
           1,
+          1,
+          null,
           null,
           null,
           1,
@@ -96,9 +101,9 @@
           1,
           null,
           1,
-          11,
-          null,
-          11,
+          10,
+          10,
+          10,
           null,
           null,
           1,
@@ -141,14 +146,31 @@
           null
         ]
       },
+      "/Users/lukeusher/Documents/MAKERS/bank_tech_test/lib/printer.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/lukeusher/Documents/MAKERS/bank_tech_test/spec/printer_spec.rb": {
         "lines": [
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -187,6 +209,6 @@
         ]
       }
     },
-    "timestamp": 1630526271
+    "timestamp": 1630528228
   }
 }

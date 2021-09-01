@@ -2,16 +2,18 @@
 
 require 'timecop'
 require_relative 'record'
+require_relative 'printer'
 
 # BANK CLASS
+
 class Bank
   MAXIMUM_BALANCE = 20_000
 
-  attr_reader :balance, :history
+  attr_reader :balance, :history, :printer
 
   def initialize
+    @printer = Printer.new
     @balance = 0.00
-    # @date = Date.today.strftime('%d/%m/%Y') # date formatting
     @history = []
   end
 

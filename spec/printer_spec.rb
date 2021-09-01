@@ -1,10 +1,13 @@
-# require 'printer'
-# require 'record'
+require 'printer'
 
-# describe Printer do
-#   it 'should print the records in the account history' do
-#     expect do
-#       subject.print
-#     end.to output("date || credit || debit || balance\n#{Record.date} || 50.00 || 0.00 || 50.00\n").to_stdout
-#   end
-# end
+describe Printer do
+  describe '#print' do
+    it 'should print the records in the account history' do
+      record = double("record", :balance => "600.00", :credit => "400.00", :debit => "400.00", :date => "01/09/201")
+      history = [record]
+      expect do
+        subject.print(history)
+      end.to output("date || credit || debit || balance\n#{record.date} || #{record.credit} || #{record.debit} || #{record.balance}\n").to_stdout
+    end
+  end
+end

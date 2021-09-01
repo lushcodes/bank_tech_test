@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'bank'
-require 'timecop'
 require 'record'
+require 'timecop'
 
 describe Bank do
 
@@ -11,8 +11,11 @@ describe Bank do
   end
 
   context 'when initialised' do
-    it { is_expected.to respond_to(:deposit).with(1).argument }
-    it { is_expected.to respond_to(:withdraw).with(1).argument }
+
+    it 'should initialize with a printer' do
+      printer = double("printer")
+      allow(Printer).to receive(:new) { printer }
+    end
 
     it 'has an initial balance of 0' do
       expect(subject.balance).to eq(0.00)
