@@ -13,7 +13,7 @@ Example Input:
 ```
 % require './lib/bank'
 % bank = Bank.new
-% bank.deposit(300)
+% bank.deposit(400)
 % bank.withdraw(150)
 % bank.print_statement
 
@@ -22,8 +22,8 @@ Example Output:
 
 ```
 date        || credit || debit  || balance
-01/09/2021  || 300.00 || 0.00   || 300.00
-01/09/2021  || 0.00   || 150.00 || 150.00 
+01/09/2021  || 400.00 || 0.00   || 400.00
+01/09/2021  || 0.00   || 150.00 || 250.00 
 
 ```
 
