@@ -11,8 +11,8 @@ class Bank
 
   attr_reader :balance, :history, :printer
 
-  def initialize
-    @printer = Printer.new
+  def initialize(printer: Printer.new)
+    @printer = printer
     @balance = 0.00
     @history = []
   end
@@ -32,9 +32,6 @@ class Bank
   end
 
   def print_statement
-    puts 'date || credit || debit || balance'
-    @history.each do |record|
-      puts "#{record.date} || #{record.credit} || #{record.debit} || #{record.balance}"
-    end
+      @printer.print(@history)
   end
 end

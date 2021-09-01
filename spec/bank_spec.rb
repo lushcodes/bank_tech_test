@@ -1,20 +1,18 @@
 # frozen_string_literal: true
 
 require 'bank'
-require 'record'
+
 require 'timecop'
 
 describe Bank do
-
-  before :each do
-    subject { described_class.new }
-  end
+  subject { described_class.new }
 
   context 'when initialised' do
 
     it 'should initialize with a printer' do
       printer = double("printer")
       allow(Printer).to receive(:new) { printer }
+      expect(subject.printer).to eq(printer)
     end
 
     it 'has an initial balance of 0' do
@@ -69,12 +67,11 @@ describe Bank do
   end
 
   describe '#print_statement' do
-    it 'should print the records in the account history' do
-      date = Date.today.strftime('%d/%m/%Y')
-      subject.deposit(50)
-      expect do
-        subject.print_statement
-      end.to output("date || credit || debit || balance\n#{date} || 50.00 || 0.00 || 50.00\n").to_stdout
+    it 'calls the printer print method' do
+      printer = double("printer")
+      allow(Printer).to receive(:new) { printer }
+      expect(printer).to receive(:print).with(subject.history)
+      subject.print_statement
     end
   end
 end
