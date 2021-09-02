@@ -9,10 +9,7 @@ describe Printer do
       history = [record]
       expect do
         subject.print(history)
-      end.to output("date || credit || debit || balance\n
-        #{record.date} ||
-        #{record.credit} ||
-        #{record.debit} || #{record.balance}\n").to_stdout
+      end.to output("date || credit || debit || balance\n#{record.date} || #{record.credit} || #{record.debit} || #{record.balance}\n").to_stdout
     end
   end
 end

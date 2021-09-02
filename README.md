@@ -38,19 +38,21 @@ I then passed that test with the simplest code I could and refactored if necessa
 
 I started by making sure that the balance started at 0 and could not go above/below set amounts. I then made sure deposit and withdrawal methods were working correctly before moving on to the next phase which was adding the record to a history when a deposit or withdrawal was made.
 
-After that I created a method to allow the printing of the history to the console.
+This was achieved by creating a Record class that received information from the Bank class. I tested this class independantly to ensure my tests were decoupled. I then moved on to mocking the new class in my Bank class tests. The same approach was then used for the printer class.
 
-The project is linted and has 100% test coverage.
+There should be 100% test coverage.
 
 ### Improvements
 
-As amazing and functional as the app is, ideally I would like to learn how to separate the functionality into 3 classes. This is to improve readability as well as adhere to the Single Responsibility Principle as currently all my functionality is based in one class. Separating this out will also make the code easier to change or add additional functionality if required.
+I was unsure whether it was worth adding a method in the Record class to format each instance variable prior to it being inserted into the history array.
+
+It might be nice to present some feedback to the user that their deposit/withdrawal was successful rather than the terminal output.
 
 I have diagrammed my thought process below:
 
 ![Domain Model & CRC Cards](./dom-model.png)
 
-I would also try to use mocking for the behaviour of the different classes when testing.
+
 
 
 

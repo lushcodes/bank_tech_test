@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'bank'
-
 require 'timecop'
 
 describe Bank do
