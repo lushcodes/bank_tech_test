@@ -5,7 +5,7 @@ This is a command line application that allows a user to make deposits and withd
 ### How to run
 
 1. Clone the repo to your local machine
-2. Run ```bundle install ``` to install the required gems
+2. Run ```bundle install``` to install the required gems
 3. Open the irb REPL in your terminal (irb) and enter the below:
 
 Example Input:
@@ -29,7 +29,7 @@ date        || credit || debit  || balance
 
 ### How to test
 
-1. Once you have run 'bundle install', run rspec in your terminal to run the test suite.
+1. Once you have run 'bundle install', run ```rspec``` in your terminal to run the test suite.
 
 ### Approach
 
