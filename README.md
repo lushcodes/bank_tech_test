@@ -44,9 +44,11 @@ There should be 100% test coverage.
 
 ### Improvements
 
-I was unsure whether it was worth adding a method in the Record class to format each instance variable prior to it being inserted into the history array.
+- I was unsure whether it was worth adding a method in the Record class to format each instance variable prior to it being inserted into the history array.
 
-It might be nice to present some feedback to the user that their deposit/withdrawal was successful rather than the terminal output.
+- It might be nice to present some feedback to the user that their deposit/withdrawal was successful rather than the terminal output.
+
+- It may be an idea to use a gem such as [terminal table](https://github.com/tj/terminal-table) to format the output properly.
 
 I have diagrammed my thought process below:
 
