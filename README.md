@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-This is a command line application that allows a user to make deposits and withdrawals to their account. It returns a bank statement that shows the user a history of their transactions and a record of when those transactions were made.
+This is a command line application that allows a user to make deposits and withdrawals to their account. It returns a bank statement that shows the user a history of their transactions and a record of when those transactions were made. You cannot deposit more than the limit of 20,000.00 and you cannot withdraw an amount that would take the balance below 0.00.
 
 ### How to run
 
@@ -13,7 +13,7 @@ Example Input:
 ```
 % require './lib/bank'
 % bank = Bank.new
-% bank.deposit(300)
+% bank.deposit(400)
 % bank.withdraw(150)
 % bank.print_statement
 
@@ -22,8 +22,8 @@ Example Output:
 
 ```
 date        || credit || debit  || balance
-01/09/2021  || 300.00 || 0.00   || 300.00
-01/09/2021  || 0.00   || 150.00 || 150.00 
+01/09/2021  || 400.00 || 0.00   || 400.00
+01/09/2021  || 0.00   || 150.00 || 250.00 
 
 ```
 
