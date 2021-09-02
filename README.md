@@ -48,6 +48,8 @@ There should be 100% test coverage.
 
 - It might be nice to present some feedback to the user that their deposit/withdrawal was successful rather than the terminal output.
 
+- It may also benefit from adding guards for edge cases (such as a user entering a string instead of an integer)
+
 - It may be an idea to use a gem such as [terminal table](https://github.com/tj/terminal-table) to format the output properly.
 
 I have diagrammed my thought process below:
