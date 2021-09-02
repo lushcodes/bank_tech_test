@@ -5,7 +5,6 @@ require_relative 'record'
 require_relative 'printer'
 
 # BANK CLASS
-
 class Bank
   MAXIMUM_BALANCE = 20_000
 
@@ -32,6 +31,6 @@ class Bank
   end
 
   def print_statement
-      @printer.print(@history)
+    @printer.print(@history)
   end
 end

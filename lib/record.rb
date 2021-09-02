@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'timecop'
 
+# RECORD CLASS
 class Record
-
   attr_reader :date, :balance, :credit, :debit
 
   def initialize(credit:, debit:, balance:)

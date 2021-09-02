@@ -1,5 +1,7 @@
-class Printer 
+# frozen_string_literal: true
 
+# PRINTER CLASS
+class Printer
   def print(history)
     puts 'date || credit || debit || balance'
     history.each do |record|
@@ -7,4 +9,3 @@ class Printer
     end
   end
 end
-
